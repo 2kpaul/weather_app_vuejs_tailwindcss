@@ -1,0 +1,57 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply border-gray-300 rounded-lg shadow-sm focus:border-sky-500 focus:ring-sky-500 my-4;
+    }
+    [type="checkbox"],
+    [type="radio"] {
+        @apply border-gray-300 rounded text-sky-600 focus:ring-sky-500;
+    }
+}
+
+#app {
+    @apply grid place-items-center h-screen;
+}
+
+.error {
+    @apply my-3 py-3 text-white text-center bg-red-400 shadow-lg;
+}
+
+.location-box {
+    @apply my-3 py-3 text-center bg-gray-200 shadow-lg;
+}
+
+.weather-box {
+    @apply my-3 py-3 text-center bg-gray-200 shadow-lg;
+}
+
+.weather-box .weather {
+    @apply text-2xl;
+}
+
+.location-box .location, .weather-box .temperature, .error .location {
+    @apply text-xl;
+}
+
+.location-box .date {
+    @apply text-sm;
+}
