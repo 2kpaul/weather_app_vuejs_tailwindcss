@@ -1,8 +1,8 @@
 # Weather app using vueJS and tailwindcss
 
-This app uses api from openweathermap.org
+This app use the weather api from openweathermap.org
 
-Go to https://openweathermap.org/ create a free account and generate your api to use for this project
+Go to https://openweathermap.org/ create a free account and generate your api key to use it for this project
 
 ## Install
 
