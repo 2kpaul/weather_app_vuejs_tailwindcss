@@ -10,7 +10,7 @@
       <div v-else>
         <div class="location-box">
           <div class="location">{{ weather.city }}, {{ weather.country }}</div>
-          <div class="date">{{ date }}</div>
+          <div class="date">{{ formatedDate }}</div>
         </div>
       </div>    
       <div class="grid grid-cols-2 gap-2">  
@@ -45,6 +45,7 @@
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 import './assets/tailwind.css';
+import dayjs from 'dayjs';
 
 export default {
   name: 'App',
@@ -57,7 +58,7 @@ export default {
       api_url: process.env.VUE_APP_WEATHER_API_URL,
       query: '',
       weather: {},
-      date : this.getCurrentDate(), 
+      date : new Date(), 
       bgClass : 'bg-gray-50',
       error : false
     }
@@ -105,22 +106,6 @@ export default {
         this.bgClass = 'bg-amber-200';
       }
     },
-    getCurrentDate() {
-
-      let today = new Date();
-      
-      let daysArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      let day = today.getDay();
-      let dayName = daysArray[day];
-
-      let monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      let month = today.getMonth();
-      let monthName = monthsArray[month];
-
-      let date = dayName +' '+ today.getDate() +' ' + monthName + ' ' + today.getFullYear();
-
-      return date;
-    },
     formatObjectKey(key) {  
       const formatLabel = key.replaceAll('_', ' ').split(" ");
 
@@ -136,6 +121,11 @@ export default {
     this.fetchWeather();
     this.changeBg();
     this.query = '';
+  },
+  computed: {
+    formatedDate() {
+            return dayjs(this.date).format('MMMM D YYYY, HH:mm');
+        }
   },
 }
 </script>
