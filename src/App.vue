@@ -33,7 +33,11 @@
         </div>
       </div> 
     </div>
-    <a href="https://openweathermap.org/" target="_blank" class="hover:text-sky-800">Api by openweathermap.org</a>
+    <div>
+      <a href="https://openweathermap.org/" target="_blank" class="hover:text-sky-800">Api by openweathermap.org</a>
+      <a href="https://paul2d.dev" target="_blank" class="hover:text-sky-800 block text-center">made by Paul2D</a>
+    </div>
+    
   </div>
   
 </template>
